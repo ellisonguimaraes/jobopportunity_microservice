@@ -1,0 +1,12 @@
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\bin\Debug\net6.0\JobOpportunityMicroservice.Domain.deps.json
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\bin\Debug\net6.0\JobOpportunityMicroservice.Domain.dll
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\bin\Debug\net6.0\JobOpportunityMicroservice.Domain.pdb
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\obj\Debug\net6.0\JobOpportunityMicroservice.Domain.csproj.AssemblyReference.cache
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\obj\Debug\net6.0\JobOpportunityMicroservice.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\obj\Debug\net6.0\JobOpportunityMicroservice.Domain.AssemblyInfoInputs.cache
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\obj\Debug\net6.0\JobOpportunityMicroservice.Domain.AssemblyInfo.cs
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\obj\Debug\net6.0\JobOpportunityMicroservice.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\obj\Debug\net6.0\JobOpportunityMicroservice.Domain.dll
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\obj\Debug\net6.0\refint\JobOpportunityMicroservice.Domain.dll
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\obj\Debug\net6.0\JobOpportunityMicroservice.Domain.pdb
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Domain\obj\Debug\net6.0\ref\JobOpportunityMicroservice.Domain.dll

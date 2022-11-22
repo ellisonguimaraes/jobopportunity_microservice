@@ -1,0 +1,55 @@
+2022-11-20 23:35:38.859 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-20 23:35:38.884 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-20 23:35:38.885 +00:00 [INF] Hosting environment: Development
+2022-11-20 23:35:38.885 +00:00 [INF] Content root path: /app/
+2022-11-20 23:39:34.206 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:9050/api/v1/opportunity/2AE90072-9E08-4E5E-9A30-08DAC91C328B - -
+2022-11-20 23:39:34.245 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-20 23:39:34.309 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.GetByIdAsync (JobOpportunityMicroservice.API)'
+2022-11-20 23:39:34.338 +00:00 [INF] Route matched with {action = "GetById", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByIdAsync(System.String) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-20 23:39:34.836 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-20 23:39:34.836 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-20 23:39:34.930 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-20 23:39:39.086 +00:00 [INF] Executed DbCommand (57ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[benefit], [t].[company], [t].[created_at], [t].[date_limit], [t].[description], [t].[email], [t].[is_active], [t].[link], [t].[max_payrange], [t].[min_payrange], [t].[modality], [t].[monthly_hours], [t].[phone_number], [t].[requerements], [t].[title], [t].[updated_at], [t].[user_id], [t].[id0], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[created_at0], [t0].[name], [t0].[updated_at0], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[job_advertisement_id], [t].[state], [t].[street], [t].[updated_at0]
+FROM (
+    SELECT TOP(2) [j].[id], [j].[benefit], [j].[company], [j].[created_at], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at], [j].[user_id], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[job_advertisement_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [JobAdvertisement] AS [j]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+    WHERE [j].[id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c].[id], [c].[category_id], [c].[created_at], [c].[job_advertisement_id], [c].[updated_at], [c0].[id] AS [id0], [c0].[created_at] AS [created_at0], [c0].[name], [c0].[updated_at] AS [updated_at0]
+    FROM [CategoryJob] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[category_id] = [c0].[id]
+) AS [t0] ON [t].[id] = [t0].[job_advertisement_id]
+ORDER BY [t].[id], [t].[id0], [t0].[id]
+2022-11-20 23:39:39.177 +00:00 [ERR] [JobAdvertisementServices:GetByIdAsync] JobOpportunityMicroservice.Domain.Exceptions.BusinessException: [ERROR0003] Job advertisement not found
+   at JobOpportunityMicroservice.Application.Services.JobAdvertisementServices.GetByIdAsync(String strId) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Services\JobAdvertisementServices.cs:line 114, TraceId: 00-6ed4e1cf71047f28469c78c9a33b3f63-76727a9041dcc6ff-00, Id: 2AE90072-9E08-4E5E-9A30-08DAC91C328B
+JobOpportunityMicroservice.Domain.Exceptions.BusinessException: [ERROR0003] Job advertisement not found
+   at JobOpportunityMicroservice.Application.Services.JobAdvertisementServices.GetByIdAsync(String strId) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Services\JobAdvertisementServices.cs:line 114, TraceId: 00-6ed4e1cf71047f28469c78c9a33b3f63-76727a9041dcc6ff-00
+2022-11-20 23:39:39.192 +00:00 [INF] Executing ObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Models.JobAdvertisementResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-20 23:39:39.220 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.GetByIdAsync (JobOpportunityMicroservice.API) in 4877.1415ms
+2022-11-20 23:39:39.222 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.GetByIdAsync (JobOpportunityMicroservice.API)'
+2022-11-20 23:39:39.228 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:9050/api/v1/opportunity/2AE90072-9E08-4E5E-9A30-08DAC91C328B - - - 400 - application/json;+charset=utf-8;+ver=1 5022.5417ms
+2022-11-20 23:39:59.223 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:9050/api/v1/opportunity/DA1C0683-65F1-4A69-1436-08DAC91C3285 - -
+2022-11-20 23:39:59.225 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.GetByIdAsync (JobOpportunityMicroservice.API)'
+2022-11-20 23:39:59.225 +00:00 [INF] Route matched with {action = "GetById", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByIdAsync(System.String) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-20 23:39:59.244 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-20 23:40:01.312 +00:00 [INF] Executed DbCommand (26ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[benefit], [t].[company], [t].[created_at], [t].[date_limit], [t].[description], [t].[email], [t].[is_active], [t].[link], [t].[max_payrange], [t].[min_payrange], [t].[modality], [t].[monthly_hours], [t].[phone_number], [t].[requerements], [t].[title], [t].[updated_at], [t].[user_id], [t].[id0], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[created_at0], [t0].[name], [t0].[updated_at0], [t].[city], [t].[country], [t].[created_at0], [t].[district], [t].[job_advertisement_id], [t].[state], [t].[street], [t].[updated_at0]
+FROM (
+    SELECT TOP(2) [j].[id], [j].[benefit], [j].[company], [j].[created_at], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at], [j].[user_id], [a].[id] AS [id0], [a].[city], [a].[country], [a].[created_at] AS [created_at0], [a].[district], [a].[job_advertisement_id], [a].[state], [a].[street], [a].[updated_at] AS [updated_at0]
+    FROM [JobAdvertisement] AS [j]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+    WHERE [j].[id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c].[id], [c].[category_id], [c].[created_at], [c].[job_advertisement_id], [c].[updated_at], [c0].[id] AS [id0], [c0].[created_at] AS [created_at0], [c0].[name], [c0].[updated_at] AS [updated_at0]
+    FROM [CategoryJob] AS [c]
+    INNER JOIN [Category] AS [c0] ON [c].[category_id] = [c0].[id]
+) AS [t0] ON [t].[id] = [t0].[job_advertisement_id]
+ORDER BY [t].[id], [t].[id0], [t0].[id]
+2022-11-20 23:40:01.456 +00:00 [INF] Executing ObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Models.JobAdvertisementResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-20 23:40:01.480 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.GetByIdAsync (JobOpportunityMicroservice.API) in 2254.5488ms
+2022-11-20 23:40:01.481 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.GetByIdAsync (JobOpportunityMicroservice.API)'
+2022-11-20 23:40:01.481 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:9050/api/v1/opportunity/DA1C0683-65F1-4A69-1436-08DAC91C3285 - - - 200 - application/json;+charset=utf-8;+ver=1 2258.1582ms

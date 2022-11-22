@@ -1,0 +1,562 @@
+2022-11-16 23:15:45.021 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-16 23:15:45.049 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-16 23:15:45.049 +00:00 [INF] Hosting environment: Development
+2022-11-16 23:15:45.049 +00:00 [INF] Content root path: /app/
+2022-11-16 23:17:28.072 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 715
+2022-11-16 23:17:28.118 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-16 23:17:28.120 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:17:28.151 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:17:28.690 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:17:28.690 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:17:28.788 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:18:00.623 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-4a7437935498bdf41e875d2fe87f8d42-f24708ab975b31f2-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:18:06.863 +00:00 [INF] Executed DbCommand (60ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:18:07.029 +00:00 [INF] Executed DbCommand (57ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:18:10.185 +00:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 80), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (Size = 300), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (Size = 1) (DbType = Byte), @p12='?' (DbType = Int32), @p13='?' (Size = 45), @p14='?' (Size = 4000), @p15='?' (Size = 150), @p16='?' (DbType = DateTime2), @p17='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [JobAdvertisement] ([id], [benefit], [company], [created_at], [date_limit], [description], [email], [is_active], [link], [max_payrange], [min_payrange], [modality], [monthly_hours], [phone_number], [requerements], [title], [updated_at], [user_id])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2022-11-16 23:18:10.228 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (DbType = DateTime2), @p4='?' (Size = 45), @p5='?' (DbType = Guid), @p6='?' (Size = 45), @p7='?' (Size = 45), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Address] ([id], [city], [country], [created_at], [district], [job_advertisement_id], [state], [street], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2022-11-16 23:18:10.233 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [CategoryJob] ([id], [category_id], [created_at], [job_advertisement_id], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-11-16 23:18:13.697 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-4a7437935498bdf41e875d2fe87f8d42-f24708ab975b31f2-00, Id: cacbecaa-a616-422d-924c-08dac828d39e, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, IsActive: True, UserId: 4dd0adf8-89c2-4e2b-8f55-f610d4b8cdbb, CreatedAt: 16/11/2022, UpdatedAt: 16/11/2022, Address: AddressResponse { Id = ad926e1c-9f69-4c27-dd7e-08dac828d39f, Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil, CreatedAt = 16/11/2022, UpdatedAt = 16/11/2022 }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:18:22.095 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-4a7437935498bdf41e875d2fe87f8d42-f24708ab975b31f2-00, Duration: 25638ms
+2022-11-16 23:18:24.265 +00:00 [INF] Executing OkObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse'.
+2022-11-16 23:18:24.291 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 56136.2653ms
+2022-11-16 23:18:24.293 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:18:24.299 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 715 - 200 - application/json;+charset=utf-8;+ver=1 56228.6043ms
+2022-11-16 23:18:36.213 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 715
+2022-11-16 23:18:36.214 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:18:36.215 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:18:36.229 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:18:39.954 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-b1306ad7ef45889d8948ee4a73bac6aa-6a18749f7dbabf9b-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:18:42.178 +00:00 [INF] Executed DbCommand (33ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:18:42.258 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:18:43.181 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 80), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (Size = 300), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (Size = 1) (DbType = Byte), @p12='?' (DbType = Int32), @p13='?' (Size = 45), @p14='?' (Size = 4000), @p15='?' (Size = 150), @p16='?' (DbType = DateTime2), @p17='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [JobAdvertisement] ([id], [benefit], [company], [created_at], [date_limit], [description], [email], [is_active], [link], [max_payrange], [min_payrange], [modality], [monthly_hours], [phone_number], [requerements], [title], [updated_at], [user_id])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2022-11-16 23:18:43.220 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (DbType = DateTime2), @p4='?' (Size = 45), @p5='?' (DbType = Guid), @p6='?' (Size = 45), @p7='?' (Size = 45), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Address] ([id], [city], [country], [created_at], [district], [job_advertisement_id], [state], [street], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2022-11-16 23:18:43.223 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [CategoryJob] ([id], [category_id], [created_at], [job_advertisement_id], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-11-16 23:18:44.362 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-b1306ad7ef45889d8948ee4a73bac6aa-6a18749f7dbabf9b-00, Id: da71a681-6205-43e0-924d-08dac828d39e, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, IsActive: True, UserId: 98e20c47-e5c2-47c8-9b2b-e01427cb9cb6, CreatedAt: 16/11/2022, UpdatedAt: 16/11/2022, Address: AddressResponse { Id = 150b5a67-7ea2-48f5-dd7f-08dac828d39f, Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil, CreatedAt = 16/11/2022, UpdatedAt = 16/11/2022 }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:18:44.363 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-b1306ad7ef45889d8948ee4a73bac6aa-6a18749f7dbabf9b-00, Duration: 4408ms
+2022-11-16 23:18:44.363 +00:00 [INF] Executing OkObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse'.
+2022-11-16 23:18:44.364 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 8148.6798ms
+2022-11-16 23:18:44.364 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:18:44.365 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 715 - 200 - application/json;+charset=utf-8;+ver=1 8151.8818ms
+2022-11-16 23:19:07.217 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 715
+2022-11-16 23:19:07.218 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:19:07.218 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:19:07.223 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:19:09.787 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-8ae9f71e34d46c094293383a050f701b-a2988977e84b8a44-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:19:09.833 +00:00 [INF] Executed DbCommand (33ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:19:09.933 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:19:09.977 +00:00 [INF] Executed DbCommand (37ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 80), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (Size = 300), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (Size = 1) (DbType = Byte), @p12='?' (DbType = Int32), @p13='?' (Size = 45), @p14='?' (Size = 4000), @p15='?' (Size = 150), @p16='?' (DbType = DateTime2), @p17='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [JobAdvertisement] ([id], [benefit], [company], [created_at], [date_limit], [description], [email], [is_active], [link], [max_payrange], [min_payrange], [modality], [monthly_hours], [phone_number], [requerements], [title], [updated_at], [user_id])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2022-11-16 23:19:09.986 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (DbType = DateTime2), @p4='?' (Size = 45), @p5='?' (DbType = Guid), @p6='?' (Size = 45), @p7='?' (Size = 45), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Address] ([id], [city], [country], [created_at], [district], [job_advertisement_id], [state], [street], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2022-11-16 23:19:09.991 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [CategoryJob] ([id], [category_id], [created_at], [job_advertisement_id], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-11-16 23:19:09.999 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-8ae9f71e34d46c094293383a050f701b-a2988977e84b8a44-00, Id: 05e6bccd-294d-4e8d-924e-08dac828d39e, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, IsActive: True, UserId: 2a77f53f-d877-490e-bf70-0a0d1ae103dc, CreatedAt: 16/11/2022, UpdatedAt: 16/11/2022, Address: AddressResponse { Id = f784538b-cae8-42a8-dd80-08dac828d39f, Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil, CreatedAt = 16/11/2022, UpdatedAt = 16/11/2022 }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:19:09.999 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-8ae9f71e34d46c094293383a050f701b-a2988977e84b8a44-00, Duration: 214ms
+2022-11-16 23:20:21.528 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-16 23:20:21.555 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-16 23:20:21.555 +00:00 [INF] Hosting environment: Development
+2022-11-16 23:20:21.556 +00:00 [INF] Content root path: /app/
+2022-11-16 23:23:52.624 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 715
+2022-11-16 23:23:52.686 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-16 23:23:52.688 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:23:52.715 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:23:53.209 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:23:53.210 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:23:53.306 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:23:56.868 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-697407615f798df4f19eb41429914b8a-fa46aa05f59aa804-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:23:57.869 +00:00 [INF] Executed DbCommand (44ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:23:57.977 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:23:58.075 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 80), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (Size = 300), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (Size = 1) (DbType = Byte), @p12='?' (DbType = Int32), @p13='?' (Size = 45), @p14='?' (Size = 4000), @p15='?' (Size = 150), @p16='?' (DbType = DateTime2), @p17='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [JobAdvertisement] ([id], [benefit], [company], [created_at], [date_limit], [description], [email], [is_active], [link], [max_payrange], [min_payrange], [modality], [monthly_hours], [phone_number], [requerements], [title], [updated_at], [user_id])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2022-11-16 23:23:58.129 +00:00 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (DbType = DateTime2), @p4='?' (Size = 45), @p5='?' (DbType = Guid), @p6='?' (Size = 45), @p7='?' (Size = 45), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Address] ([id], [city], [country], [created_at], [district], [job_advertisement_id], [state], [street], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2022-11-16 23:23:58.135 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [CategoryJob] ([id], [category_id], [created_at], [job_advertisement_id], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-11-16 23:23:58.163 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-697407615f798df4f19eb41429914b8a-fa46aa05f59aa804-00, Id: ed7199e5-d20d-47a7-bbe1-08dac829a2fa, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, IsActive: True, UserId: 0f8ae7b2-2f2c-46be-993f-66c8181437c5, CreatedAt: 16/11/2022, UpdatedAt: 16/11/2022, Address: AddressResponse { Id = 86c920ce-2ec1-4251-3344-08dac829a2fc, Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil, CreatedAt = 16/11/2022, UpdatedAt = 16/11/2022 }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:23:58.164 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-697407615f798df4f19eb41429914b8a-fa46aa05f59aa804-00, Duration: 1296ms
+2022-11-16 23:24:02.771 +00:00 [INF] Executing OkObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:24:02.800 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 10079.6037ms
+2022-11-16 23:24:02.801 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:24:02.808 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 715 - 200 - application/json;+charset=utf-8;+ver=1 10185.4017ms
+2022-11-16 23:24:20.923 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 660
+2022-11-16 23:24:20.924 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:24:20.925 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:24:20.939 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:24:23.467 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-0f45063819bb0802a0e58dbae8ad686e-ee342f2b62c96ff5-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: , Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:24:30.789 +00:00 [ERR] AddJobOpportunityCommand: [ERROR0002] Data validation failure, TraceId: 00-0f45063819bb0802a0e58dbae8ad686e-ee342f2b62c96ff5-00
+FluentValidation.ValidationException: Validation failed: 
+ -- Description: description is empty Severity: Error
+   at JobOpportunityMicroservice.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\ValidationBehavior.cs:line 29
+   at JobOpportunityMicroservice.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\LoggingBehavior.cs:line 28
+   at JobOpportunityMicroservice.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\PerformanceBehavior.cs:line 26
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 67
+2022-11-16 23:24:33.713 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:24:33.714 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 12788.4826ms
+2022-11-16 23:24:33.715 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:24:33.718 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 660 - 400 - application/json;+charset=utf-8;+ver=1 12794.9496ms
+2022-11-16 23:25:42.857 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-16 23:25:42.886 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-16 23:25:42.886 +00:00 [INF] Hosting environment: Development
+2022-11-16 23:25:42.887 +00:00 [INF] Content root path: /app/
+2022-11-16 23:25:46.330 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 660
+2022-11-16 23:25:46.391 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-16 23:25:46.393 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:25:46.423 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:25:46.914 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:25:46.914 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:25:47.014 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:26:05.653 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-0f65cde2d079ed86379b560dde3de372-932e2e3442bf15cb-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: , Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:26:10.371 +00:00 [ERR] AddJobOpportunityCommand: [ERROR0002] Data validation failure, TraceId: 00-0f65cde2d079ed86379b560dde3de372-932e2e3442bf15cb-00
+FluentValidation.ValidationException: Validation failed: 
+ -- Description: description is empty Severity: Error
+   at JobOpportunityMicroservice.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\ValidationBehavior.cs:line 29
+   at JobOpportunityMicroservice.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\LoggingBehavior.cs:line 28
+   at JobOpportunityMicroservice.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\PerformanceBehavior.cs:line 26
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 67
+2022-11-16 23:26:10.959 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:26:10.989 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 24561.892ms
+2022-11-16 23:26:10.990 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:26:10.997 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 660 - 400 - application/json;+charset=utf-8;+ver=1 24668.4474ms
+2022-11-16 23:28:20.217 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-16 23:28:20.275 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-16 23:28:20.276 +00:00 [INF] Hosting environment: Development
+2022-11-16 23:28:20.276 +00:00 [INF] Content root path: /app/
+2022-11-16 23:28:20.346 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 660
+2022-11-16 23:28:20.388 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-16 23:28:20.390 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:28:20.416 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:28:20.916 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:28:20.917 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:28:21.022 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:28:24.379 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-47ccddd7ab791a405e6bb6fc3b8ad42f-3d5f32c302d0c4f8-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: , Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:28:27.488 +00:00 [ERR] AddJobOpportunityCommand: [ERROR0002] Data validation failure, TraceId: 00-47ccddd7ab791a405e6bb6fc3b8ad42f-3d5f32c302d0c4f8-00
+FluentValidation.ValidationException: Validation failed: 
+ -- Description: description is empty Severity: Error
+   at JobOpportunityMicroservice.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\ValidationBehavior.cs:line 29
+   at JobOpportunityMicroservice.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\LoggingBehavior.cs:line 28
+   at JobOpportunityMicroservice.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\PerformanceBehavior.cs:line 26
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 67
+2022-11-16 23:28:27.503 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:28:27.516 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 7095.2136ms
+2022-11-16 23:28:27.517 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:28:27.522 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 660 - 400 - application/json;+charset=utf-8;+ver=1 7178.0549ms
+2022-11-16 23:29:00.708 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-16 23:29:00.742 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-16 23:29:00.742 +00:00 [INF] Hosting environment: Development
+2022-11-16 23:29:00.743 +00:00 [INF] Content root path: /app/
+2022-11-16 23:29:11.051 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-16 23:29:11.088 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-16 23:29:11.089 +00:00 [INF] Hosting environment: Development
+2022-11-16 23:29:11.089 +00:00 [INF] Content root path: /app/
+2022-11-16 23:29:24.817 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-16 23:29:24.853 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-16 23:29:24.854 +00:00 [INF] Hosting environment: Development
+2022-11-16 23:29:24.854 +00:00 [INF] Content root path: /app/
+2022-11-16 23:30:09.735 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-16 23:30:09.766 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-16 23:30:09.766 +00:00 [INF] Hosting environment: Development
+2022-11-16 23:30:09.766 +00:00 [INF] Content root path: /app/
+2022-11-16 23:30:15.775 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 660
+2022-11-16 23:30:15.815 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-16 23:30:15.816 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:30:15.841 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:30:16.341 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:30:16.341 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:30:16.447 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:30:20.510 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-5e4dbe45d373c32e1ae3263e1f5a2354-cd74566ac46816dd-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: , Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:30:20.611 +00:00 [ERR] AddJobOpportunityCommand: [ERROR0002] Data validation failure, TraceId: 00-5e4dbe45d373c32e1ae3263e1f5a2354-cd74566ac46816dd-00
+FluentValidation.ValidationException: Validation failed: 
+ -- Description: description is empty Severity: Error
+   at JobOpportunityMicroservice.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\ValidationBehavior.cs:line 29
+   at JobOpportunityMicroservice.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\LoggingBehavior.cs:line 28
+   at JobOpportunityMicroservice.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\PerformanceBehavior.cs:line 26
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 67
+2022-11-16 23:30:20.675 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:30:20.691 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 4841.4781ms
+2022-11-16 23:30:20.693 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:30:20.700 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 660 - 400 - application/json;+charset=utf-8;+ver=1 4926.5572ms
+2022-11-16 23:30:31.550 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 604
+2022-11-16 23:30:31.552 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:30:31.553 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:30:31.569 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:30:34.269 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-ba01dbe9feca5454390f98a95d228621-8ed0859c835d24df-00, Title: Desenvolvedor C# Techlead, Company: , Description: , Modality: , Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:30:34.312 +00:00 [ERR] AddJobOpportunityCommand: [ERROR0002] Data validation failure, TraceId: 00-ba01dbe9feca5454390f98a95d228621-8ed0859c835d24df-00
+FluentValidation.ValidationException: Validation failed: 
+ -- Company: company is empty Severity: Error
+ -- Description: description is empty Severity: Error
+   at JobOpportunityMicroservice.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\ValidationBehavior.cs:line 29
+   at JobOpportunityMicroservice.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\LoggingBehavior.cs:line 28
+   at JobOpportunityMicroservice.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\PerformanceBehavior.cs:line 26
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 67
+2022-11-16 23:30:34.313 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:30:34.314 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 2760.393ms
+2022-11-16 23:30:34.314 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:30:34.315 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 604 - 400 - application/json;+charset=utf-8;+ver=1 2764.9478ms
+2022-11-16 23:30:45.524 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 688
+2022-11-16 23:30:45.525 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:30:45.525 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:30:45.529 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:30:50.226 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-113eed96c072b119053456cf82c57dd4-930ebd52da16c608-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: , Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:30:51.151 +00:00 [INF] Executed DbCommand (46ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:30:51.303 +00:00 [INF] Executed DbCommand (48ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:30:51.399 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 80), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (Size = 300), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (Size = 1) (DbType = Byte), @p12='?' (DbType = Int32), @p13='?' (Size = 45), @p14='?' (Size = 4000), @p15='?' (Size = 150), @p16='?' (DbType = DateTime2), @p17='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [JobAdvertisement] ([id], [benefit], [company], [created_at], [date_limit], [description], [email], [is_active], [link], [max_payrange], [min_payrange], [modality], [monthly_hours], [phone_number], [requerements], [title], [updated_at], [user_id])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2022-11-16 23:30:51.409 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (DbType = DateTime2), @p4='?' (Size = 45), @p5='?' (DbType = Guid), @p6='?' (Size = 45), @p7='?' (Size = 45), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Address] ([id], [city], [country], [created_at], [district], [job_advertisement_id], [state], [street], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2022-11-16 23:30:51.411 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [CategoryJob] ([id], [category_id], [created_at], [job_advertisement_id], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-11-16 23:30:51.438 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-113eed96c072b119053456cf82c57dd4-930ebd52da16c608-00, Id: 390be6e2-ee54-482f-d9de-08dac82a9956, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: PRESENTIAL, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, IsActive: True, UserId: 09cfa8cb-2baf-4287-a1c5-9e3c4ef053e8, CreatedAt: 16/11/2022, UpdatedAt: 16/11/2022, Address: AddressResponse { Id = 1d03419d-0577-4e83-1f2f-08dac82a9958, Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil, CreatedAt = 16/11/2022, UpdatedAt = 16/11/2022 }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:30:51.438 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-113eed96c072b119053456cf82c57dd4-930ebd52da16c608-00, Duration: 1212ms
+2022-11-16 23:30:51.443 +00:00 [INF] Executing OkObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:30:51.450 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 5924.9711ms
+2022-11-16 23:30:51.451 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:30:51.453 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 688 - 200 - application/json;+charset=utf-8;+ver=1 5928.8657ms
+2022-11-16 23:31:36.181 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 711
+2022-11-16 23:31:36.182 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:31:36.182 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:31:36.183 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:31:38.728 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-4fbe6786799f8c05d2aacb5959739fe1-1e1def7ea350f3d7-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: OI, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:31:38.796 +00:00 [ERR] AddJobOpportunityCommand: [ERROR0002] Data validation failure, TraceId: 00-4fbe6786799f8c05d2aacb5959739fe1-1e1def7ea350f3d7-00
+FluentValidation.ValidationException: Validation failed: 
+ -- Modality: Invalid modality Severity: Error
+   at JobOpportunityMicroservice.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\ValidationBehavior.cs:line 29
+   at JobOpportunityMicroservice.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\LoggingBehavior.cs:line 28
+   at JobOpportunityMicroservice.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\PerformanceBehavior.cs:line 26
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 67
+2022-11-16 23:31:38.798 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:31:38.798 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 2615.6234ms
+2022-11-16 23:31:38.798 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:31:38.798 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 711 - 400 - application/json;+charset=utf-8;+ver=1 2617.5856ms
+2022-11-16 23:31:43.163 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 688
+2022-11-16 23:31:43.163 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:31:43.164 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:31:43.165 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:31:46.808 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-bab0cbab4ece49b7e17135dd9875ac0a-d70ccbe9a07d0d7d-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: , Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:31:46.857 +00:00 [INF] Executed DbCommand (26ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:31:46.891 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:31:46.895 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 80), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (Size = 300), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (Size = 1) (DbType = Byte), @p12='?' (DbType = Int32), @p13='?' (Size = 45), @p14='?' (Size = 4000), @p15='?' (Size = 150), @p16='?' (DbType = DateTime2), @p17='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [JobAdvertisement] ([id], [benefit], [company], [created_at], [date_limit], [description], [email], [is_active], [link], [max_payrange], [min_payrange], [modality], [monthly_hours], [phone_number], [requerements], [title], [updated_at], [user_id])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2022-11-16 23:31:46.942 +00:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (DbType = DateTime2), @p4='?' (Size = 45), @p5='?' (DbType = Guid), @p6='?' (Size = 45), @p7='?' (Size = 45), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Address] ([id], [city], [country], [created_at], [district], [job_advertisement_id], [state], [street], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2022-11-16 23:31:46.946 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [CategoryJob] ([id], [category_id], [created_at], [job_advertisement_id], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-11-16 23:31:46.950 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-bab0cbab4ece49b7e17135dd9875ac0a-d70ccbe9a07d0d7d-00, Id: 365e2dc4-3ca7-4acd-d9df-08dac82a9956, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: PRESENTIAL, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, IsActive: True, UserId: ee5b580a-a801-41ee-941e-8451a005dd63, CreatedAt: 16/11/2022, UpdatedAt: 16/11/2022, Address: AddressResponse { Id = b96b6233-b901-4ea4-1f30-08dac82a9958, Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil, CreatedAt = 16/11/2022, UpdatedAt = 16/11/2022 }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:31:46.951 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-bab0cbab4ece49b7e17135dd9875ac0a-d70ccbe9a07d0d7d-00, Duration: 143ms
+2022-11-16 23:31:46.951 +00:00 [INF] Executing OkObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:31:46.952 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 3787.682ms
+2022-11-16 23:31:46.952 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:31:46.952 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 688 - 200 - application/json;+charset=utf-8;+ver=1 3789.6685ms
+2022-11-16 23:33:03.432 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-16 23:33:03.468 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-16 23:33:03.468 +00:00 [INF] Hosting environment: Development
+2022-11-16 23:33:03.469 +00:00 [INF] Content root path: /app/
+2022-11-16 23:33:04.377 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 688
+2022-11-16 23:33:04.413 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-16 23:33:04.415 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:33:04.440 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:33:04.911 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:33:04.911 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-16 23:33:05.007 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:33:07.137 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-48e1fdf2c8b1a5dc8d907b19d6124a70-3b992a3e5bc88ce9-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: , Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:33:07.246 +00:00 [ERR] AddJobOpportunityCommand: [ERROR0002] Data validation failure, TraceId: 00-48e1fdf2c8b1a5dc8d907b19d6124a70-3b992a3e5bc88ce9-00
+FluentValidation.ValidationException: Validation failed: 
+ -- Modality: modality is empty Severity: Error
+   at JobOpportunityMicroservice.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\ValidationBehavior.cs:line 29
+   at JobOpportunityMicroservice.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\LoggingBehavior.cs:line 28
+   at JobOpportunityMicroservice.Application.Behaviors.PerformanceBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\PerformanceBehavior.cs:line 26
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 67
+2022-11-16 23:33:07.307 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:33:07.323 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 2878.235ms
+2022-11-16 23:33:07.324 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:33:07.332 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 688 - 400 - application/json;+charset=utf-8;+ver=1 2956.6194ms
+2022-11-16 23:36:11.808 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 715
+2022-11-16 23:36:11.810 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:36:11.810 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-16 23:36:11.826 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-16 23:36:20.292 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-51d59fc7b57789f67a0f43e069fde61d-193169335a64cfec-00, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, Address: AddressRequest { Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:36:21.175 +00:00 [INF] Executed DbCommand (51ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:36:21.286 +00:00 [INF] Executed DbCommand (50ms) [Parameters=[@__ToUpper_0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[id], [t].[created_at], [t].[name], [t].[updated_at], [t0].[id], [t0].[category_id], [t0].[created_at], [t0].[job_advertisement_id], [t0].[updated_at], [t0].[id0], [t0].[benefit], [t0].[company], [t0].[created_at0], [t0].[date_limit], [t0].[description], [t0].[email], [t0].[is_active], [t0].[link], [t0].[max_payrange], [t0].[min_payrange], [t0].[modality], [t0].[monthly_hours], [t0].[phone_number], [t0].[requerements], [t0].[title], [t0].[updated_at0], [t0].[user_id], [t0].[id1], [t0].[city], [t0].[country], [t0].[created_at1], [t0].[district], [t0].[job_advertisement_id0], [t0].[state], [t0].[street], [t0].[updated_at1]
+FROM (
+    SELECT TOP(2) [c].[id], [c].[created_at], [c].[name], [c].[updated_at]
+    FROM [Category] AS [c]
+    WHERE UPPER([c].[name]) = @__ToUpper_0
+) AS [t]
+LEFT JOIN (
+    SELECT [c0].[id], [c0].[category_id], [c0].[created_at], [c0].[job_advertisement_id], [c0].[updated_at], [j].[id] AS [id0], [j].[benefit], [j].[company], [j].[created_at] AS [created_at0], [j].[date_limit], [j].[description], [j].[email], [j].[is_active], [j].[link], [j].[max_payrange], [j].[min_payrange], [j].[modality], [j].[monthly_hours], [j].[phone_number], [j].[requerements], [j].[title], [j].[updated_at] AS [updated_at0], [j].[user_id], [a].[id] AS [id1], [a].[city], [a].[country], [a].[created_at] AS [created_at1], [a].[district], [a].[job_advertisement_id] AS [job_advertisement_id0], [a].[state], [a].[street], [a].[updated_at] AS [updated_at1]
+    FROM [CategoryJob] AS [c0]
+    INNER JOIN [JobAdvertisement] AS [j] ON [c0].[job_advertisement_id] = [j].[id]
+    LEFT JOIN [Address] AS [a] ON [j].[id] = [a].[job_advertisement_id]
+) AS [t0] ON [t].[id] = [t0].[category_id]
+ORDER BY [t].[id], [t0].[id], [t0].[id0]
+2022-11-16 23:36:21.418 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 80), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (Size = 300), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (Size = 1) (DbType = Byte), @p12='?' (DbType = Int32), @p13='?' (Size = 45), @p14='?' (Size = 4000), @p15='?' (Size = 150), @p16='?' (DbType = DateTime2), @p17='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [JobAdvertisement] ([id], [benefit], [company], [created_at], [date_limit], [description], [email], [is_active], [link], [max_payrange], [min_payrange], [modality], [monthly_hours], [phone_number], [requerements], [title], [updated_at], [user_id])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2022-11-16 23:36:21.429 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (DbType = DateTime2), @p4='?' (Size = 45), @p5='?' (DbType = Guid), @p6='?' (Size = 45), @p7='?' (Size = 45), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Address] ([id], [city], [country], [created_at], [district], [job_advertisement_id], [state], [street], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2022-11-16 23:36:21.433 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [CategoryJob] ([id], [category_id], [created_at], [job_advertisement_id], [updated_at])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-11-16 23:36:21.462 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-51d59fc7b57789f67a0f43e069fde61d-193169335a64cfec-00, Id: acb292cd-b20f-47e0-77b9-08dac82b5e06, Title: Desenvolvedor C# Techlead, Company: Take Blip, Description: Trabalhar como desenvolvedor C#, Modality: HYBRID, Benefit: Plano de saude, plano dentário, MinPayRange: 4500.00, MaxPayRange: 6000.00, Requerements: 2 anos de experiência, MonthlyHours: 200, Email: take@blip.net, PhoneNumber: 11923454732, Link: https://localhost.com, DateLimit: 17/01/2022, IsActive: True, UserId: 0b4ed315-c20c-454a-b726-1a7d4512a3b6, CreatedAt: 16/11/2022, UpdatedAt: 16/11/2022, Address: AddressResponse { Id = 6a9373a1-57cb-476b-da3e-08dac82b5e0a, Street = Rua X, District = Centro, City = Itabuna, State = Bahia, Country = Brasil, CreatedAt = 16/11/2022, UpdatedAt = 16/11/2022 }, Categories: System.Collections.Generic.List`1[System.String]
+2022-11-16 23:36:21.463 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-51d59fc7b57789f67a0f43e069fde61d-193169335a64cfec-00, Duration: 1193ms
+2022-11-16 23:36:21.468 +00:00 [INF] Executing OkObjectResult, writing value of type 'JobOpportunityMicroservice.Application.Models.GenericHttpResponse`1[[JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommandResponse, JobOpportunityMicroservice.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-16 23:36:21.476 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 9664.9196ms
+2022-11-16 23:36:21.476 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-16 23:36:21.478 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 715 - 200 - application/json;+charset=utf-8;+ver=1 9670.5220ms

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "CMshEtNayCfGM5Wuoa/VRp5Y37axk6UtSHSjcg/VFOo=",
+  "Source": "JobOpportunityMicroservice.API",
+  "BasePath": "_content/JobOpportunityMicroservice.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

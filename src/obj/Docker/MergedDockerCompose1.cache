@@ -1,0 +1,93 @@
+name: dockercompose7126455502354509068
+services:
+  jobopportunitymicroservice.api:
+    build:
+      context: C:\Users\ellis\Desktop\JobOpportunityMicroservice\src
+      dockerfile: JobOpportunityMicroservice.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: JobOpportunityMicroservice.API
+      target: base
+    container_name: JobOpportunityMicroservice.API
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: jobopportunitymicroserviceapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/JobOpportunityMicroservice.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "9050"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ellis\Desktop\JobOpportunityMicroservice\src
+      target: /src
+      bind:
+        create_host_path: true
+  sqlserver.db:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Abcd@1234
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "8822"
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: sqlserver_volume
+      target: /var/opt/mssql
+      volume: {}
+networks:
+  backend:
+    name: dockercompose7126455502354509068_backend
+volumes:
+  sqlserver_volume:
+    name: dockercompose7126455502354509068_sqlserver_volume

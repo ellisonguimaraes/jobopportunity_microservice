@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "lth9LxwB1QP4IrrPmYarSzFgSkMb01XaeA6OllSjst8=",
+  "Source": "JobOpportunityMicroservice.API",
+  "BasePath": "_content/JobOpportunityMicroservice.API",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

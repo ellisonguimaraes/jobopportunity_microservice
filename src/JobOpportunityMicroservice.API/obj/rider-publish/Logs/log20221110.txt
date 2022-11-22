@@ -1,0 +1,323 @@
+2022-11-10 02:08:18.376 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 02:08:18.988 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:08:18.989 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:09:22.080 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 02:09:22.647 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:09:22.648 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:16:16.411 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 02:16:16.956 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:16:16.957 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:21:58.114 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 02:21:58.704 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:21:58.705 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:23:31.416 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 02:23:31.989 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:23:31.990 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:23:39.179 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Input string was not in a correct format.
+   at System.Text.ValueStringBuilder.ThrowFormatError()
+   at System.Text.ValueStringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at JobOpportunityMicroservice.Application.Validations.AddJobOpportunityCommandValidator..ctor() in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Validations\AddJobOpportunityCommandValidator.cs:line 31
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at MediatR.ServiceFactoryExtensions.GetInstances[T](ServiceFactory factory)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, ServiceFactory serviceFactory, CancellationToken cancellationToken)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-11-10 02:24:02.544 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Input string was not in a correct format.
+   at System.Text.ValueStringBuilder.ThrowFormatError()
+   at System.Text.ValueStringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at JobOpportunityMicroservice.Application.Validations.AddJobOpportunityCommandValidator..ctor() in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Validations\AddJobOpportunityCommandValidator.cs:line 31
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at MediatR.ServiceFactoryExtensions.GetInstances[T](ServiceFactory factory)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, ServiceFactory serviceFactory, CancellationToken cancellationToken)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-11-10 02:26:15.030 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 02:26:15.585 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:26:15.586 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:27:47.116 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 02:27:47.680 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:27:47.681 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:29:42.643 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 02:29:43.216 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:29:43.217 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:33:26.316 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 02:33:26.903 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:33:26.903 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 02:34:17.708 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+FluentValidation.ValidationException: Validation failed: 
+ -- Title: Title is empty Severity: Error
+ -- Company: Company is empty Severity: Error
+ -- Description: Description is empty Severity: Error
+ -- Benefit: Benefit is empty Severity: Error
+ -- Requerements: Requerements is empty Severity: Error
+ -- Email: Email is empty Severity: Error
+ -- Email: Invalid Email Severity: Error
+ -- PhoneNumber: The specified condition was not met for 'Phone Number'. Severity: Error
+ -- PhoneNumber: Phone Number is empty Severity: Error
+ -- Link: Link is empty Severity: Error
+ -- Link: Invalid Link Severity: Error
+ -- DateLimit: Date Limit is empty Severity: Error
+ -- DateLimit: Invalid Date Limit Severity: Error
+   at JobOpportunityMicroservice.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Behaviors\ValidationBehavior.cs:line 29
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity(AddJobOpportunityCommand command) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\Controllers\OpportunityController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-11-10 03:04:58.549 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 03:04:59.129 +00:00 [WRN] No store type was specified for the decimal property 'MaxPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 03:04:59.130 +00:00 [WRN] No store type was specified for the decimal property 'MinPayRange' on entity type 'JobAdvertisement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-10 03:08:09.494 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 03:14:06.314 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'JobOpportunityMicroservice.Infra.Data.Contexts.ApplicationDbContext'.
+System.InvalidCastException: Unable to cast object of type 'System.Decimal' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method51(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidCastException: Unable to cast object of type 'System.Decimal' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method51(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2022-11-10 03:14:06.377 +00:00 [ERR] [JobAdvertisementServices:GetByIdAsync] [ERROR0001]An unexpected error occurred, TraceId: 00-f405f8bdc6bb67bbc55f9fdc5e1ff695-77c94a2a2f6fce7f-00, Id: e837f6e9-6e6f-4d18-9f30-1fefbcb981d1
+System.InvalidCastException: Unable to cast object of type 'System.Decimal' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method51(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at JobOpportunityMicroservice.Infra.Data.Repositories.JobAdvertisementRepository.GetByIdAsync(Guid id) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.Data\Repositories\JobAdvertisementRepository.cs:line 36
+   at JobOpportunityMicroservice.Application.Services.JobAdvertisementServices.GetByIdAsync(String strId) in C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Application\Services\JobAdvertisementServices.cs:line 121
+2022-11-10 03:15:40.640 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-10 03:15:40.673 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-10 03:15:40.674 +00:00 [INF] Hosting environment: Development
+2022-11-10 03:15:40.674 +00:00 [INF] Content root path: /app/
+2022-11-10 03:15:42.781 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:9050/api/v1/opportunity/e837f6e9-6e6f-4d18-9f30-1fefbcb981d1 - -
+2022-11-10 03:15:42.830 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 03:15:42.832 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.GetByIdAsync (JobOpportunityMicroservice.API)'
+2022-11-10 03:15:42.867 +00:00 [INF] Route matched with {action = "GetById", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByIdAsync(System.String) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:15:43.613 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:15:52.285 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-10 03:15:52.310 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-10 03:15:52.310 +00:00 [INF] Hosting environment: Development
+2022-11-10 03:15:52.311 +00:00 [INF] Content root path: /app/
+2022-11-10 03:16:23.918 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-10 03:16:23.945 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-10 03:16:23.946 +00:00 [INF] Hosting environment: Development
+2022-11-10 03:16:23.946 +00:00 [INF] Content root path: /app/
+2022-11-10 03:16:25.529 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:16:25.568 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 03:16:25.570 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:16:25.597 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:16:26.191 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:16:31.866 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-7b350ae8578da1f26c24013ac16e246a-ea2af30142f92d7f-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:16:31.869 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-7b350ae8578da1f26c24013ac16e246a-ea2af30142f92d7f-00, 
+2022-11-10 03:16:32.451 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-7b350ae8578da1f26c24013ac16e246a-ea2af30142f92d7f-00, Duration: 10ms
+2022-11-10 03:16:32.457 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:16:32.461 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 6858.8625ms
+2022-11-10 03:16:32.462 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:16:32.472 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 6944.2916ms
+2022-11-10 03:17:58.238 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:17:58.239 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:17:58.240 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:17:58.256 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:17:58.263 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-4a3e04fb510fc9c61ecb6ea1c70ba5f1-ca91fb9ba388fc22-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:17:58.264 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-4a3e04fb510fc9c61ecb6ea1c70ba5f1-ca91fb9ba388fc22-00, 
+2022-11-10 03:17:58.264 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-4a3e04fb510fc9c61ecb6ea1c70ba5f1-ca91fb9ba388fc22-00, Duration: 0ms
+2022-11-10 03:17:58.264 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:17:58.265 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 24.073ms
+2022-11-10 03:17:58.265 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:17:58.266 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 28.0463ms
+2022-11-10 03:18:17.755 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:18:17.756 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:17.756 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:18:17.760 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:18:17.763 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-f9770ecf07b36883ddda9785e8dcbb6f-c25b80e58a96e3b1-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:18:17.763 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-f9770ecf07b36883ddda9785e8dcbb6f-c25b80e58a96e3b1-00, 
+2022-11-10 03:18:17.763 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-f9770ecf07b36883ddda9785e8dcbb6f-c25b80e58a96e3b1-00, Duration: 0ms
+2022-11-10 03:18:17.764 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:18:17.764 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 7.5694ms
+2022-11-10 03:18:17.764 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:17.764 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 9.6268ms
+2022-11-10 03:18:20.840 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:18:20.841 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:20.841 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:18:20.842 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:18:20.843 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-97131beaf2e92d4b3b96118512a20482-e12afd64cabcd4d2-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:18:20.844 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-97131beaf2e92d4b3b96118512a20482-e12afd64cabcd4d2-00, 
+2022-11-10 03:18:20.844 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-97131beaf2e92d4b3b96118512a20482-e12afd64cabcd4d2-00, Duration: 0ms
+2022-11-10 03:18:20.844 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:18:20.844 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 2.4316ms
+2022-11-10 03:18:20.844 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:20.845 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 4.3549ms
+2022-11-10 03:18:22.674 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:18:22.674 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:22.674 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:18:22.675 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:18:22.676 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-c908767f2c1bb223d37b6fee91ef7030-45c41e82e8ec217c-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:18:22.677 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-c908767f2c1bb223d37b6fee91ef7030-45c41e82e8ec217c-00, 
+2022-11-10 03:18:22.677 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-c908767f2c1bb223d37b6fee91ef7030-45c41e82e8ec217c-00, Duration: 0ms
+2022-11-10 03:18:22.677 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:18:22.677 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 2.5162ms
+2022-11-10 03:18:22.678 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:22.678 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 4.3391ms
+2022-11-10 03:18:24.308 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:18:24.308 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:24.309 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:18:24.310 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:18:24.311 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-c06118cd4dbb4aa49a9ca1db42f32561-3c58c45736684d34-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:18:24.311 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-c06118cd4dbb4aa49a9ca1db42f32561-3c58c45736684d34-00, 
+2022-11-10 03:18:24.311 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-c06118cd4dbb4aa49a9ca1db42f32561-3c58c45736684d34-00, Duration: 0ms
+2022-11-10 03:18:24.312 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:18:24.312 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 2.7061ms
+2022-11-10 03:18:24.312 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:24.312 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 4.7417ms
+2022-11-10 03:18:25.155 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:18:25.156 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:25.156 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:18:25.157 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:18:25.158 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-6cba497734019276997474aa9cc3890a-e02cacc8792152ea-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:18:25.158 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-6cba497734019276997474aa9cc3890a-e02cacc8792152ea-00, 
+2022-11-10 03:18:25.159 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-6cba497734019276997474aa9cc3890a-e02cacc8792152ea-00, Duration: 0ms
+2022-11-10 03:18:25.159 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:18:25.159 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 2.3945ms
+2022-11-10 03:18:25.159 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:18:25.159 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 4.1105ms
+2022-11-10 03:21:10.131 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-10 03:21:10.191 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-10 03:21:10.192 +00:00 [INF] Hosting environment: Development
+2022-11-10 03:21:10.192 +00:00 [INF] Content root path: /app/
+2022-11-10 03:21:10.365 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:21:10.410 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 03:21:10.412 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:21:10.439 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:21:11.095 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:21:11.299 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-deeeede05b3580aa34ee555e52385392-906bbfedb16e4715-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:21:16.958 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-deeeede05b3580aa34ee555e52385392-906bbfedb16e4715-00, 
+2022-11-10 03:21:16.958 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-deeeede05b3580aa34ee555e52385392-906bbfedb16e4715-00, Duration: 5661ms
+2022-11-10 03:21:16.963 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:21:16.966 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 6522.7259ms
+2022-11-10 03:21:16.967 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:21:16.976 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 6612.9363ms
+2022-11-10 03:36:59.346 +00:00 [INF] Now listening on: http://[::]:80
+2022-11-10 03:36:59.375 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-10 03:36:59.376 +00:00 [INF] Hosting environment: Development
+2022-11-10 03:36:59.376 +00:00 [INF] Content root path: /app/
+2022-11-10 03:36:59.611 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:36:59.653 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-11-10 03:36:59.654 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:36:59.681 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:37:00.293 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:37:00.476 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-64f8ebdb3bad0dae192dd20c0705786e-b1b8f5df251bf10c-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:37:03.319 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-64f8ebdb3bad0dae192dd20c0705786e-b1b8f5df251bf10c-00, 
+2022-11-10 03:37:03.319 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-64f8ebdb3bad0dae192dd20c0705786e-b1b8f5df251bf10c-00, Duration: 2845ms
+2022-11-10 03:37:03.323 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:37:03.327 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 3641.65ms
+2022-11-10 03:37:03.328 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:37:03.337 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 3727.5801ms
+2022-11-10 03:37:11.977 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:37:11.979 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:37:11.979 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:37:11.993 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:37:11.995 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-e5361e4e781efadb31b2b95aeef11fd1-0c29bfe38e088408-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:37:14.725 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-e5361e4e781efadb31b2b95aeef11fd1-0c29bfe38e088408-00, 
+2022-11-10 03:37:14.726 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-e5361e4e781efadb31b2b95aeef11fd1-0c29bfe38e088408-00, Duration: 2730ms
+2022-11-10 03:37:14.726 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:37:14.726 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 2746.7439ms
+2022-11-10 03:37:14.727 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:37:14.727 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 2749.8378ms
+2022-11-10 03:37:17.159 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10
+2022-11-10 03:37:17.160 +00:00 [INF] Executing endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:37:17.161 +00:00 [INF] Route matched with {action = "AddJobOpportunity", controller = "Opportunity"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddJobOpportunity(JobOpportunityMicroservice.Application.Commands.AddJobOpportunity.AddJobOpportunityCommand) on controller JobOpportunityMicroservice.API.Controllers.OpportunityController (JobOpportunityMicroservice.API).
+2022-11-10 03:37:17.165 +00:00 [INF] Entity Framework Core 6.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2022-11-10 03:37:17.168 +00:00 [INF] Handling AddJobOpportunityCommand, TraceId: 00-73ca600a10f5f50d64eca965ebf5f83e-3760ab9d10b52ac3-00, Title: , Company: , Description: , Modality: , Benefit: , MinPayRange: 0, MaxPayRange: 0, Requerements: , MonthlyHours: 0, Email: , PhoneNumber: , Link: , DateLimit: , Address: Address { Street = , District = , City = , State = , Country =  }
+2022-11-10 03:37:19.823 +00:00 [INF] Handled AddJobOpportunityCommandResponse, TraceId: 00-73ca600a10f5f50d64eca965ebf5f83e-3760ab9d10b52ac3-00, 
+2022-11-10 03:37:19.824 +00:00 [INF] Performance AddJobOpportunityCommand, TraceId: 00-73ca600a10f5f50d64eca965ebf5f83e-3760ab9d10b52ac3-00, Duration: 2656ms
+2022-11-10 03:37:19.824 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-10 03:37:19.824 +00:00 [INF] Executed action JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API) in 2663.1359ms
+2022-11-10 03:37:19.825 +00:00 [INF] Executed endpoint 'JobOpportunityMicroservice.API.Controllers.OpportunityController.AddJobOpportunity (JobOpportunityMicroservice.API)'
+2022-11-10 03:37:19.825 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:9050/api/v1/opportunity application/json 10 - 200 0 - 2666.1190ms

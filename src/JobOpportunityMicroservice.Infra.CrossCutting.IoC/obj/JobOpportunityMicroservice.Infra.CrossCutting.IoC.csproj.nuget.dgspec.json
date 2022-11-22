@@ -1,0 +1,396 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj",
+        "projectName": "JobOpportunityMicroservice.Application",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj",
+        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
+              },
+              "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Serilog.Enrichers.ClientInfo": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj",
+        "projectName": "JobOpportunityMicroservice.Domain",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj",
+        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
+        "projectName": "JobOpportunityMicroservice.Infra.CrossCutting.IoC",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\JobOpportunityMicroservice.Infra.CrossCutting.IoC.csproj",
+        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.IoC\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Application\\JobOpportunityMicroservice.Application.csproj"
+              },
+              "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
+        "projectName": "JobOpportunityMicroservice.Infra.CrossCutting.Resource",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj",
+        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj",
+        "projectName": "JobOpportunityMicroservice.Infra.Data",
+        "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.Data\\JobOpportunityMicroservice.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\ellis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ellis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

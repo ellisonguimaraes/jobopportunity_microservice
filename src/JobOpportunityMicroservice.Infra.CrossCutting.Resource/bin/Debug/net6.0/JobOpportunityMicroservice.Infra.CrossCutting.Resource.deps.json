@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "JobOpportunityMicroservice.Infra.CrossCutting.Resource/1.0.0": {
+        "runtime": {
+          "JobOpportunityMicroservice.Infra.CrossCutting.Resource.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JobOpportunityMicroservice.Infra.CrossCutting.Resource/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

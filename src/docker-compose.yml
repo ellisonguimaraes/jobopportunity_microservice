@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  jobopportunitymicroservice.api:
+    image: ${DOCKER_REGISTRY-}jobopportunitymicroserviceapi
+    build:
+      context: .
+      dockerfile: JobOpportunityMicroservice.API/Dockerfile
+
+  sqlserver.db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
