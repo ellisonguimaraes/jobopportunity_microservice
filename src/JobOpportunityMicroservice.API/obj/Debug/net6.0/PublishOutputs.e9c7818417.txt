@@ -13,6 +13,8 @@ C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\MediatR.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\MediatR.Contracts.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Microsoft.Data.SqlClient.dll
@@ -32,6 +34,7 @@ C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Microsoft.OpenApi.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Microsoft.Win32.SystemEvents.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Newtonsoft.Json.dll
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Newtonsoft.Json.Bson.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Serilog.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Serilog.AspNetCore.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.API\obj\rider-publish\Serilog.Enrichers.ClientInfo.dll

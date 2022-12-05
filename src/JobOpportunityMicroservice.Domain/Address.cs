@@ -13,6 +13,6 @@ public class Address : BaseEntity
     public string Country { get; set; }
 
     // Relationship
-    public Guid JobAdvertisementId { get; set; }
+    public Guid? JobAdvertisementId { get; set; }
     public virtual JobAdvertisement JobAdvertisement { get; set; }
 }

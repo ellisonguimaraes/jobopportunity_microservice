@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using JobOpportunityMicroservice.Application.Commands.JobOpportunity;
 using JobOpportunityMicroservice.Domain;
-using JobOpportunityMicroservice.Domain.Exceptions;
 using JobOpportunityMicroservice.Infra.Data.Repositories.Interface;
 using MediatR;
 
@@ -24,12 +23,7 @@ public class UpdateJobOpportunityCommandHandler : IRequestHandler<UpdateJobOppor
     {
         var jobAdvertisement = _mapper.Map<JobAdvertisement>(request);
 
-        var getJobAdvertisement = await _jobAdvertisementRepository.GetByIdAsync(jobAdvertisement.Id);
-
-        if (getJobAdvertisement is null)
-            throw new BusinessException("");
-
-        jobAdvertisement.JobCategories = await BuildJobCategoryListAsync(request.Categories);
+        jobAdvertisement.JobCategories = await BuildJobCategoryListAsync(request.Categories, jobAdvertisement.Id);
 
         var result = await _jobAdvertisementRepository.UpdateAsync(jobAdvertisement);
 
@@ -40,11 +34,12 @@ public class UpdateJobOpportunityCommandHandler : IRequestHandler<UpdateJobOppor
     /// Build job category to save entity
     /// </summary>
     /// <param name="categories">Category string list</param>
+    /// <param name="jobAdvertisementId">Job advertisement entity ID</param>
     /// <returns>Category entity list</returns>
-    private async Task<List<JobCategory>> BuildJobCategoryListAsync(IEnumerable<string> categories)
+    private async Task<List<JobCategory>> BuildJobCategoryListAsync(IEnumerable<string> categories, Guid jobAdvertisementId)
     {
         var jobCategories = new List<JobCategory>();
-        
+    
         foreach (var c in categories)
         {
             var category = await _categoryRepository.GetByNameAsync(c);
@@ -55,7 +50,8 @@ public class UpdateJobOpportunityCommandHandler : IRequestHandler<UpdateJobOppor
                 {
                     CategoryId = category.Id,
                     CreatedAt = DateTime.UtcNow,
-                    UpdateAt = DateTime.UtcNow
+                    UpdateAt = DateTime.UtcNow,
+                    JobAdvertisementId = jobAdvertisementId
                 };
                 
                 jobCategories.Add(jobCategory);

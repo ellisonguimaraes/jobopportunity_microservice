@@ -1,14 +1,13 @@
 ﻿using FluentValidation;
 using JobOpportunityMicroservice.Application.Behaviors;
 using JobOpportunityMicroservice.Application.Commands.AddJobOpportunity;
+using JobOpportunityMicroservice.Application.Commands.DeleteJobOpportunity;
 using JobOpportunityMicroservice.Application.Commands.UpdateJobOpportunity;
 using JobOpportunityMicroservice.Application.Mapper;
-using JobOpportunityMicroservice.Application.Models;
-using JobOpportunityMicroservice.Application.Services;
-using JobOpportunityMicroservice.Application.Services.Interfaces;
+using JobOpportunityMicroservice.Application.Queries.GetAllJobOpportunity;
+using JobOpportunityMicroservice.Application.Queries.GetJobOpportunity;
 using JobOpportunityMicroservice.Application.Validations;
 using JobOpportunityMicroservice.Domain;
-using JobOpportunityMicroservice.Infra.Data.Models;
 using JobOpportunityMicroservice.Infra.Data.Repositories;
 using JobOpportunityMicroservice.Infra.Data.Repositories.Interface;
 using MediatR;
@@ -54,17 +53,20 @@ public static class DependencyInjectionExtensions
         services.AddAutoMapper(typeof(JobAdvertisementProfile));
         
         // Validators
-        services.AddTransient<IValidator<PaginationParametersRequest>, PaginationParametersRequestValidator>();
-        services.AddTransient<IValidator<AddJobOpportunityCommand>, AddJobOpportunityCommandValidator>();
-        services.AddTransient<IValidator<UpdateJobOpportunityCommand>, UpdateJobOpportunityCommandValidator>();
+        services.AddSingleton<IValidator<GetAllJobOpportunityQuery>, GetAllJobOpportunityQueryValidator>();
+        services.AddSingleton<IValidator<AddJobOpportunityCommand>, AddJobOpportunityCommandValidator>();
+        services.AddSingleton<IValidator<UpdateJobOpportunityCommand>, UpdateJobOpportunityCommandValidator>();
+        services.AddSingleton<IValidator<GetJobOpportunityQuery>, GetJobOpportunityQueryValidator>();
         
-        // Services
-        services.AddScoped<IJobAdvertisementServices, JobAdvertisementServices>();
-        
+        // Command Handlers
+        services.AddMediatR(typeof(AddJobOpportunityCommandHandler).Assembly);
+        services.AddMediatR(typeof(UpdateJobOpportunityCommandHandler).Assembly);
+        services.AddMediatR(typeof(DeleteJobOpportunityCommandHandler).Assembly);
+
         // Behaviors
-        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(PerformanceBehavior<,>));
-        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
-        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(PerformanceBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
     }
 
     /// <summary>

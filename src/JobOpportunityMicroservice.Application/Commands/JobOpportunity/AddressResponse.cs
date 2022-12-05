@@ -1,30 +1,30 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace JobOpportunityMicroservice.Application.Commands.JobOpportunity;
 
 public record AddressResponse
 {
-    [JsonPropertyName("id")]
+    [JsonProperty("id")]
     public Guid Id { get; set; }
     
-    [JsonPropertyName("street")]
+    [JsonProperty("street")]
     public string Street { get; set; }
     
-    [JsonPropertyName("district")]
+    [JsonProperty("district")]
     public string District { get; set; }
 
-    [JsonPropertyName("city")]
+    [JsonProperty("city")]
     public string City { get; set; }
 
-    [JsonPropertyName("state")]
+    [JsonProperty("state")]
     public string State { get; set; }
     
-    [JsonPropertyName("country")]
+    [JsonProperty("country")]
     public string Country { get; set; }
     
-    [JsonPropertyName("created_at")]
+    [JsonProperty("created_at")]
     public string CreatedAt { get; set; }
     
-    [JsonPropertyName("updated_at")]
+    [JsonProperty("updated_at")]
     public string UpdatedAt { get; set; }
 }

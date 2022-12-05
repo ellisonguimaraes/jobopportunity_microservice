@@ -1,8 +1,9 @@
-﻿using FluentValidation;
+﻿using System.Text.Json;
+using FluentValidation;
 using JobOpportunityMicroservice.Application.Commands.JobOpportunity;
 using JobOpportunityMicroservice.Application.Models;
+using JobOpportunityMicroservice.Domain.Exceptions;
 using JobOpportunityMicroservice.Infra.CrossCutting.Resource;
-using Newtonsoft.Json;
 
 namespace JobOpportunityMicroservice.API.Middleware;
 
@@ -46,7 +47,19 @@ public class GlobalExceptionMiddleware
             
             _logger.LogError(e, $"{ErrorCodeResource.DATA_VALIDATION_FAILURE}, {ENDPOINT_NAME}: {context.Request.Path}, {TRACE_ID_NAME}: {response.TraceId}");
 
-            await BuildResponseAsync(context, StatusCodes.Status400BadRequest, JsonConvert.SerializeObject(response), CONTENT_TYPE);
+            await BuildResponseAsync(context, StatusCodes.Status400BadRequest, JsonSerializer.Serialize(response), CONTENT_TYPE);
+        }
+        catch (BusinessException e)
+        {
+            var response = new GenericHttpResponse
+            {
+                Errors = new List<string> { e.Message },
+                Data = default
+            };
+            
+            _logger.LogError(e, $"{ErrorCodeResource.BUSINESS_FAILURE}: {e.Message}, {ENDPOINT_NAME}: {context.Request.Path}, {TRACE_ID_NAME}: {response.TraceId}");
+
+            await BuildResponseAsync(context, StatusCodes.Status400BadRequest, JsonSerializer.Serialize(response), CONTENT_TYPE);
         }
         catch (Exception e)
         {
@@ -58,7 +71,7 @@ public class GlobalExceptionMiddleware
             
             _logger.LogError(e, $"{ErrorCodeResource.UNEXPECTED_ERROR_OCURRED}, {ENDPOINT_NAME}: {context.Request.Path}, {TRACE_ID_NAME}: {response.TraceId}");
             
-            await BuildResponseAsync(context, StatusCodes.Status400BadRequest, JsonConvert.SerializeObject(response), CONTENT_TYPE);
+            await BuildResponseAsync(context, StatusCodes.Status400BadRequest, JsonSerializer.Serialize(response), CONTENT_TYPE);
         }
     }
 

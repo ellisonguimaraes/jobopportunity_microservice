@@ -2,6 +2,8 @@ C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\bin\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\bin\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.pdb
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj.AssemblyReference.cache
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.ErrorCodeResource.resources
+C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj.GenerateResource.cache
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.AssemblyInfoInputs.cache
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.AssemblyInfo.cs
@@ -10,5 +12,3 @@ C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\refint\JobOpportunityMicroservice.Infra.CrossCutting.Resource.dll
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.pdb
 C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\ref\JobOpportunityMicroservice.Infra.CrossCutting.Resource.dll
-C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.ErrorCodeResource.resources
-C:\Users\ellis\Desktop\JobOpportunityMicroservice\src\JobOpportunityMicroservice.Infra.CrossCutting.Resource\obj\Debug\net6.0\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj.GenerateResource.cache

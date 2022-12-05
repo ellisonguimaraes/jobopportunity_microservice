@@ -1,4 +1,6 @@
 ﻿using JobOpportunityMicroservice.Domain;
+using JobOpportunityMicroservice.Domain.Exceptions;
+using JobOpportunityMicroservice.Infra.CrossCutting.Resource;
 using JobOpportunityMicroservice.Infra.Data.Contexts;
 using JobOpportunityMicroservice.Infra.Data.Models;
 using JobOpportunityMicroservice.Infra.Data.Repositories.Interface;
@@ -43,7 +45,7 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
     /// </summary>
     /// <param name="item">Type T item</param>
     /// <returns>Item with id</returns>
-    public async Task<T> CreateAsync(T item)
+    public virtual async Task<T> CreateAsync(T item)
     {
         item.CreatedAt = DateTime.UtcNow;
         item.UpdateAt = DateTime.UtcNow;
@@ -55,16 +57,16 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
     }
 
     /// <summary>
-    /// Delete address in database
+    /// Delete in database
     /// </summary>
     /// <param name="id">Id</param>
-    /// <returns>Deleted address</returns>
-    public async Task<T?> DeleteAsync(Guid id)
+    /// <returns>Deleted entity</returns>
+    public virtual async Task<T> DeleteAsync(Guid id)
     {
-        var getItem = await DbSet.SingleOrDefaultAsync(i => i.Id.Equals(id));
-
+        var getItem = await GetByIdAsync(id);
+        
         if (getItem is null)
-            return default(T);
+            throw new BusinessException(string.Format(ErrorCodeResource.ENTITY_NOT_FOUND, typeof(T).Name));
 
         DbSet.Remove(getItem);
         await ApplicationDbContext.SaveChangesAsync();
@@ -73,18 +75,24 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
     }
     
     /// <summary>
-    /// Update address in database
+    /// Update entity in database
     /// </summary>
-    /// <param name="item">Address</param>
-    /// <returns>Updated Address</returns>
-    public async Task<T?> UpdateAsync(T item)
+    /// <param name="item">Entity item</param>
+    /// <returns>Updated entity</returns>
+    public virtual async Task<T> UpdateAsync(T item)
     {
+        var getItem = await GetByIdAsync(item.Id);
+        
+        if (getItem is null)
+            throw new BusinessException(string.Format(ErrorCodeResource.ENTITY_NOT_FOUND, typeof(T).Name));
+        
         item.UpdateAt = DateTime.UtcNow;
         
-        ApplicationDbContext.Entry(item).Property(x => x.CreatedAt).IsModified = false;
+        ApplicationDbContext.Entry(getItem).CurrentValues.SetValues(item);
+        ApplicationDbContext.Entry(getItem).Property(x => x.CreatedAt).IsModified = false;
         
         await ApplicationDbContext.SaveChangesAsync();
-
-        return await GetByIdAsync(item.Id);
+        
+        return getItem;
     }
 }

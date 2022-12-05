@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -181,9 +185,9 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
-            "Newtonsoft.Json": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[6.0.11, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
@@ -269,10 +273,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -472,6 +472,9 @@
             "projectReferences": {
               "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj": {
                 "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj"
+              },
+              "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj": {
+                "projectPath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Infra.CrossCutting.Resource\\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj"
               }
             }
           }

@@ -60,6 +60,15 @@ namespace JobOpportunityMicroservice.Infra.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [ERROR0005] Business failure.
+        /// </summary>
+        public static string BUSINESS_FAILURE {
+            get {
+                return ResourceManager.GetString("BUSINESS_FAILURE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [ERROR0002] Data validation failure.
         /// </summary>
         public static string DATA_VALIDATION_FAILURE {
@@ -87,7 +96,34 @@ namespace JobOpportunityMicroservice.Infra.CrossCutting.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [ERROR0001]An unexpected error occurred.
+        ///   Looks up a localized string similar to [ERROR0007] {0} is empty.
+        /// </summary>
+        public static string PROPERTY_IS_EMPTY {
+            get {
+                return ResourceManager.GetString("PROPERTY_IS_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [ERROR0006] {0} is null.
+        /// </summary>
+        public static string PROPERTY_IS_NULL {
+            get {
+                return ResourceManager.GetString("PROPERTY_IS_NULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [ERROR0008] {0} more than {1} characters.
+        /// </summary>
+        public static string PROPERTY_MORE_THAN_CHARACTERS {
+            get {
+                return ResourceManager.GetString("PROPERTY_MORE_THAN_CHARACTERS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [ERROR0001] An unexpected error occurred.
         /// </summary>
         public static string UNEXPECTED_ERROR_OCURRED {
             get {

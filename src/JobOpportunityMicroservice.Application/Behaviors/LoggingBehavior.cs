@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -50,7 +51,7 @@ public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
         
         foreach (var property in properties)
         {
-            var value = property.GetValue(obj, null)?.ToString() ?? string.Empty;
+            var value = GetPropertyValue(property, obj);
             dictionary.Add(property.Name, value);
         }
 
@@ -64,4 +65,22 @@ public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
     /// <returns>String properties with separator</returns>
     private string JoinPropertiesToMessage(IDictionary<string, string> properties)
         => string.Join(SEPARATOR, properties.Select(p => $"{p.Key}: {p.Value}"));
+
+    /// <summary>
+    /// Get value by property
+    /// </summary>
+    /// <param name="propertyInfo">Property info object</param>
+    /// <param name="obj">object to get property value</param>
+    /// <returns>Value</returns>
+    private string GetPropertyValue(PropertyInfo propertyInfo, object obj)
+    {
+        try
+        {
+            return propertyInfo.GetValue(obj, null)?.ToString() ?? string.Empty;
+        }
+        catch (Exception ex)
+        {
+            return string.Empty;
+        }
+    }
 }

@@ -1,66 +1,66 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace JobOpportunityMicroservice.Application.Commands.JobOpportunity;
 
 public record JobOpportunityCommandResponse
 {
-    [JsonPropertyName("id")]
+    [JsonProperty("id")]
     public Guid Id { get; set; }
     
-    [JsonPropertyName("title")]
+    [JsonProperty("title")]
     public string Title { get; set; }
     
-    [JsonPropertyName("company")]
+    [JsonProperty("company")]
     public string Company { get; set; }
     
-    [JsonPropertyName("description")]
+    [JsonProperty("description")]
     public string Description { get; set; }
     
-    [JsonPropertyName("modality")]
+    [JsonProperty("modality")]
     public string Modality { get; set; }
     
-    [JsonPropertyName("benefit")]
+    [JsonProperty("benefit")]
     public string Benefit { get; set; }
     
-    [JsonPropertyName("min_payrange")]
+    [JsonProperty("min_payrange")]
     public decimal MinPayRange { get; set; }
     
-    [JsonPropertyName("max_payrange")]
+    [JsonProperty("max_payrange")]
     public decimal MaxPayRange { get; set; }
     
-    [JsonPropertyName("requerements")]
+    [JsonProperty("requerements")]
     public string Requerements { get; set; }
     
-    [JsonPropertyName("monthly_hours")]
+    [JsonProperty("monthly_hours")]
     public int MonthlyHours { get; set; }
     
-    [JsonPropertyName("email")]
+    [JsonProperty("email")]
     public string Email { get; set; }
     
-    [JsonPropertyName("phone_number")]
+    [JsonProperty("phone_number")]
     public string PhoneNumber { get; set; }
     
-    [JsonPropertyName("link")]
+    [JsonProperty("link")]
     public string Link { get; set; }
     
-    [JsonPropertyName("date_limit")]
+    [JsonProperty("date_limit")]
     public string DateLimit { get; set; }
     
-    [JsonPropertyName("is_active")]
+    [JsonProperty("is_active")]
     public bool IsActive { get; set; }
     
-    [JsonPropertyName("user_id")]
+    [JsonProperty("user_id")]
     public string UserId { get; set; }
     
-    [JsonPropertyName("created_at")]
+    [JsonProperty("created_at")]
     public string CreatedAt { get; set; }
     
-    [JsonPropertyName("updated_at")]
+    [JsonProperty("updated_at")]
     public string UpdatedAt { get; set; }
     
-    [JsonPropertyName("address")]
+    [JsonProperty("address")]
     public AddressResponse Address { get; set; }
     
-    [JsonPropertyName("categories")]
+    [JsonProperty("categories")]
     public List<string> Categories { get; set; }
 }

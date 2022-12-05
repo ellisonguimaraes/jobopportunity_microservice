@@ -1,9 +1,6 @@
 using JobOpportunityMicroservice.API.Middleware;
-using JobOpportunityMicroservice.Application.Commands.AddJobOpportunity;
-using JobOpportunityMicroservice.Application.Commands.UpdateJobOpportunity;
 using JobOpportunityMicroservice.Infra.CrossCutting.IoC;
 using JobOpportunityMicroservice.Infra.Data.Contexts;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
@@ -42,12 +39,8 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     options.SuppressModelStateInvalidFilter = true;
 });
 
-// Add MediatR
-builder.Services.AddMediatR(typeof(AddJobOpportunityCommandHandler).Assembly);
-builder.Services.AddMediatR(typeof(UpdateJobOpportunityCommandHandler).Assembly);
-
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson();
 
 // Register Services
 builder.Services.RegisterServices(builder.Configuration);

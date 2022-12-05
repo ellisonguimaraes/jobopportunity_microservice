@@ -1,20 +1,20 @@
 ﻿using System.Diagnostics;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace JobOpportunityMicroservice.Application.Models;
 
 public class GenericHttpResponse<T>
 {
-    [JsonPropertyName("trace_id")]
+    [JsonProperty("trace_id")]
     public string? TraceId { get; set; }
 
     [JsonIgnore]
     public int StatusCode { get; set; }
 
-    [JsonPropertyName("data")]
+    [JsonProperty("data")]
     public T? Data { get; set; }
 
-    [JsonPropertyName("errors")]
+    [JsonProperty("errors")]
     public IEnumerable<string> Errors { get; set; }
 
     public GenericHttpResponse()
@@ -26,16 +26,16 @@ public class GenericHttpResponse<T>
 
 public class GenericHttpResponse
 {
-    [JsonPropertyName("trace_id")]
+    [JsonProperty("trace_id")]
     public string? TraceId { get; set; }
 
     [JsonIgnore]
     public int StatusCode { get; set; }
 
-    [JsonPropertyName("data")]
+    [JsonProperty("data")]
     public dynamic? Data { get; set; }
 
-    [JsonPropertyName("errors")]
+    [JsonProperty("errors")]
     public IEnumerable<string> Errors { get; set; }
 
     public GenericHttpResponse()

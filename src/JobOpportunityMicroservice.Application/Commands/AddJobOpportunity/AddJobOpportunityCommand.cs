@@ -1,71 +1,71 @@
-﻿using System.Text.Json.Serialization;
-using JobOpportunityMicroservice.Application.Commands.JobOpportunity;
+﻿using JobOpportunityMicroservice.Application.Commands.JobOpportunity;
 using MediatR;
+using Newtonsoft.Json;
 
 namespace JobOpportunityMicroservice.Application.Commands.AddJobOpportunity;
 
-public record struct AddressRequest
+public record AddressRequest
 {
-    [JsonPropertyName("street")]
+    [JsonProperty("street")]
     public string Street { get; set; }
     
-    [JsonPropertyName("district")]
+    [JsonProperty("district")]
     public string District { get; set; }
 
-    [JsonPropertyName("city")]
+    [JsonProperty("city")]
     public string City { get; set; }
 
-    [JsonPropertyName("state")]
+    [JsonProperty("state")]
     public string State { get; set; }
     
-    [JsonPropertyName("country")]
+    [JsonProperty("country")]
     public string Country { get; set; }
 }
 
-public record struct AddJobOpportunityCommand : IRequest<JobOpportunityCommandResponse>
+public record AddJobOpportunityCommand : IRequest<JobOpportunityCommandResponse>
 {
-    [JsonPropertyName("title")]
+    [JsonProperty("title")]
     public string Title { get; set; }
     
-    [JsonPropertyName("company")]
+    [JsonProperty("company")]
     public string Company { get; set; }
     
-    [JsonPropertyName("description")]
+    [JsonProperty("description")]
     public string Description { get; set; }
     
-    [JsonPropertyName("modality")]
+    [JsonProperty("modality")]
     public string Modality { get; set; }
     
-    [JsonPropertyName("benefit")]
+    [JsonProperty("benefit")]
     public string Benefit { get; set; }
     
-    [JsonPropertyName("min_payrange")]
+    [JsonProperty("min_payrange")]
     public decimal? MinPayRange { get; set; }
     
-    [JsonPropertyName("max_payrange")]
+    [JsonProperty("max_payrange")]
     public decimal? MaxPayRange { get; set; }
     
-    [JsonPropertyName("requerements")]
+    [JsonProperty("requerements")]
     public string Requerements { get; set; }
     
-    [JsonPropertyName("monthly_hours")]
+    [JsonProperty("monthly_hours")]
     public int? MonthlyHours { get; set; }
     
-    [JsonPropertyName("email")]
+    [JsonProperty("email")]
     public string Email { get; set; }
     
-    [JsonPropertyName("phone_number")]
+    [JsonProperty("phone_number")]
     public string PhoneNumber { get; set; }
     
-    [JsonPropertyName("link")]
+    [JsonProperty("link")]
     public string Link { get; set; }
     
-    [JsonPropertyName("date_limit")]
+    [JsonProperty("date_limit")]
     public string DateLimit { get; set; }
 
-    [JsonPropertyName("address")]
+    [JsonProperty("address")]
     public AddressRequest Address { get; set; }
 
-    [JsonPropertyName("categories")]
+    [JsonProperty("categories")]
     public List<string> Categories { get; set; }
 }

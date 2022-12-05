@@ -19,7 +19,7 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="UNEXPECTED_ERROR_OCURRED" xml:space="preserve">
-        <value>[ERROR0001]An unexpected error occurred</value>
+        <value>[ERROR0001] An unexpected error occurred</value>
     </data>
     <data name="DATA_VALIDATION_FAILURE" xml:space="preserve">
         <value>[ERROR0002] Data validation failure</value>
@@ -29,5 +29,17 @@
     </data>
     <data name="INVALID_PROPERTY" xml:space="preserve">
         <value>[ERROR0004] Invalid {0}</value>
+    </data>
+    <data name="BUSINESS_FAILURE" xml:space="preserve">
+        <value>[ERROR0005] Business failure</value>
+    </data>
+    <data name="PROPERTY_IS_NULL" xml:space="preserve">
+        <value>[ERROR0006] {0} is null</value>
+    </data>
+    <data name="PROPERTY_IS_EMPTY" xml:space="preserve">
+        <value>[ERROR0007] {0} is empty</value>
+    </data>
+    <data name="PROPERTY_MORE_THAN_CHARACTERS" xml:space="preserve">
+        <value>[ERROR0008] {0} more than {1} characters</value>
     </data>
 </root>

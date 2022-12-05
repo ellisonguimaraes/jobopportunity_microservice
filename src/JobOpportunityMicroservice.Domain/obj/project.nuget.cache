@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "QXVLyGl6IrbwGOVTOEZaVifw/q7NM2LZjMzIFrQhttnJ1DqVCqM0thdHfu0ANQs/0xPD0cnJ50tW7ZCJfw6/CA==",
+  "dgSpecHash": "5zniQcVtb64b47wq+bnzps66OK5z6TqptwVS3V4JhIr/GdBrLIW7h1pW/iXuuyrv6JTXx0wyjtcy1HLu29lcNQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ellis\\Desktop\\JobOpportunityMicroservice\\src\\JobOpportunityMicroservice.Domain\\JobOpportunityMicroservice.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ellis\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\ellis\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\ellis\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\ellis\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\ellis\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\ellis\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

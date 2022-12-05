@@ -9,6 +9,7 @@
       "JobOpportunityMicroservice.Infra.Data/1.0.0": {
         "dependencies": {
           "JobOpportunityMicroservice.Domain": "1.0.0",
+          "JobOpportunityMicroservice.Infra.CrossCutting.Resource": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10"
         },
@@ -283,14 +284,6 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.1": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.1.25517"
-          }
-        }
-      },
       "Swashbuckle.AspNetCore/6.2.3": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
@@ -471,11 +464,15 @@
       },
       "JobOpportunityMicroservice.Domain/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
           "JobOpportunityMicroservice.Domain.dll": {}
+        }
+      },
+      "JobOpportunityMicroservice.Infra.CrossCutting.Resource/1.0.0": {
+        "runtime": {
+          "JobOpportunityMicroservice.Infra.CrossCutting.Resource.dll": {}
         }
       }
     }
@@ -682,13 +679,6 @@
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
-    "Newtonsoft.Json/13.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
-      "path": "newtonsoft.json/13.0.1",
-      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
-    },
     "Swashbuckle.AspNetCore/6.2.3": {
       "type": "package",
       "serviceable": true,
@@ -816,6 +806,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "JobOpportunityMicroservice.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JobOpportunityMicroservice.Infra.CrossCutting.Resource/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

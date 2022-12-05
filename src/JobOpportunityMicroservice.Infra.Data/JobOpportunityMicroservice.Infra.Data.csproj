@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JobOpportunityMicroservice.Domain\JobOpportunityMicroservice.Domain.csproj" />
+    <ProjectReference Include="..\JobOpportunityMicroservice.Infra.CrossCutting.Resource\JobOpportunityMicroservice.Infra.CrossCutting.Resource.csproj" />
   </ItemGroup>
 
 </Project>
